@@ -1,0 +1,50 @@
+# Requisitos para el Sistema de Predicción de Calidad del Aire
+# con NASA TEMPO + LSTM
+
+# Deep Learning
+tensorflow>=2.13.0
+keras>=2.13.0
+
+# Análisis de datos
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Visualización
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# APIs y requests
+requests>=2.31.0
+
+# Datos científicos (para leer archivos NetCDF de TEMPO)
+xarray>=2023.1.0
+netCDF4>=1.6.0
+h5py>=3.8.0
+
+# NASA Earthdata (opcional, para datos reales de TEMPO)
+earthaccess>=0.5.0
+
+# Procesamiento de fechas
+python-dateutil>=2.8.0
+
+# Para producción (opcional)
+fastapi>=0.100.0
+uvicorn>=0.23.0
+pydantic>=2.0.0
+
+# Utilidades
+joblib>=1.3.0
+tqdm>=4.65.0
+
+# Jupyter (para notebooks)
+jupyter>=1.0.0
+ipykernel>=6.25.0
+ipywidgets>=8.1.0
+
+# Para guardar modelos
+h5py>=3.8.0
+
+# Testing (opcional)
+pytest>=7.4.0
+pytest-cov>=4.1.0

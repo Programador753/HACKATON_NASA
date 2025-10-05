@@ -1,0 +1,63 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                   🛰️ REPORTE DE CALIDAD DEL AIRE - TEMPO                    ║
+║                              Sistema LSTM + NASA                             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📍 UBICACIÓN
+   • Ciudad: Los Angeles, CA
+   • Coordenadas: 34.0522°N, -118.2437°W
+   • Fecha/Hora: 2025-10-03 13:16:14
+
+🌡️ CONDICIONES ACTUALES
+   • AQI: 150.1 (🔴 Insalubre)
+   • PM2.5: 52.6 µg/m³
+   • PM10: 89.4 µg/m³
+   • O₃: 50.0 µg/m³
+   • NO₂: 66.4 µg/m³
+   • Temperatura: 30.0°C
+   • Humedad: 53.8%
+   • Viento: 4.7 km/h
+
+🔮 PREDICCIONES (próximas 24 horas)
+
+   ⏰ En 3 horas (16:16):
+      • AQI: 127.4 ↓ (-22.7)
+      • Nivel: 🟠 Insalubre para grupos sensibles
+      • Recomendación: ⚠️ Reduce actividades intensas si eres sensible...
+
+   ⏰ En 6 horas (19:16):
+      • AQI: 126.4 ↓ (-23.7)
+      • Nivel: 🟠 Insalubre para grupos sensibles
+      • Recomendación: ⚠️ Reduce actividades intensas si eres sensible...
+
+   ⏰ En 12 horas (01:16):
+      • AQI: 133.4 ↓ (-16.6)
+      • Nivel: 🟠 Insalubre para grupos sensibles
+      • Recomendación: ⚠️ Reduce actividades intensas si eres sensible...
+
+   ⏰ En 24 horas (13:16):
+      • AQI: 130.5 ↓ (-19.6)
+      • Nivel: 🟠 Insalubre para grupos sensibles
+      • Recomendación: ⚠️ Reduce actividades intensas si eres sensible...
+
+🚨 ALERTAS (4)
+   • 🟠 ADVERTENCIA - Calidad del aire INSALUBRE para grupos sensibles en 3h.
+   • 🟠 ADVERTENCIA - Calidad del aire INSALUBRE para grupos sensibles en 6h.
+   • 🟠 ADVERTENCIA - Calidad del aire INSALUBRE para grupos sensibles en 12h.
+   • 🟠 ADVERTENCIA - Calidad del aire INSALUBRE para grupos sensibles en 24h.
+
+💡 RECOMENDACIONES
+   • Mejor hora para actividad exterior: En 6 horas (AQI: 126.4)
+   • Evitar actividad exterior: En 12 horas (AQI: 133.4)
+
+📊 DATOS TÉCNICOS
+   • Modelo: LSTM Bidireccional (3 capas)
+   • Datos de entrada: Últimas 24 horas
+   • Fuente: NASA TEMPO + NASA POWER
+   • Precisión del modelo: MAE ~5-20 AQI
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Este informe fue generado automáticamente por el sistema de predicción      ║
+║  de calidad del aire basado en datos satelitales TEMPO y redes neuronales   ║
+╚══════════════════════════════════════════════════════════════════════════════╝

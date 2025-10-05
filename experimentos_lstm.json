@@ -1,0 +1,152 @@
+[
+  {
+    "nombre": "Experimento_1",
+    "fecha": "2025-10-03 23:03:39",
+    "configuracion": {
+      "LOOKBACK": 24,
+      "LSTM_units": "128-64-32",
+      "Dropout": 0.2,
+      "LEARNING_RATE": 0.0005,
+      "BATCH_SIZE": 32,
+      "EPOCHS": 100,
+      "PATIENCE_EARLY_STOP": 15
+    },
+    "metricas": {
+      "R2_3h": 0.7505700491332429,
+      "R2_6h": 0.7404857673364453,
+      "R2_12h": 0.7427060568864501,
+      "R2_24h": 0.7582588864613007,
+      "R2_promedio": 0.7480051899543596,
+      "MAE_prom": 0.09878621045287458,
+      "RMSE_prom": 0.1348360331492752
+    },
+    "historia": {
+      "train_loss_final": 0.007183171343058348,
+      "val_loss_final": 0.006759683135896921,
+      "mejor_val_loss": 0.00670792767778039,
+      "mejor_epoca": 41,
+      "epocas_totales": 57
+    },
+    "notas": ""
+  },
+  {
+    "nombre": "0.0005",
+    "fecha": "2025-10-03 23:08:02",
+    "configuracion": {
+      "LOOKBACK": 24,
+      "LSTM_units": "128-64-32",
+      "Dropout": 0.2,
+      "LEARNING_RATE": 0.0005,
+      "BATCH_SIZE": 32,
+      "EPOCHS": 100,
+      "PATIENCE_EARLY_STOP": 15
+    },
+    "metricas": {
+      "R2_3h": 0.7572176552359665,
+      "R2_6h": 0.7512270306792994,
+      "R2_12h": 0.7455398231281583,
+      "R2_24h": 0.7520525272684455,
+      "R2_promedio": 0.7515092590779675,
+      "MAE_prom": 0.10587065380718959,
+      "RMSE_prom": 0.14224851700020885
+    },
+    "historia": {
+      "train_loss_final": 0.007088220678269863,
+      "val_loss_final": 0.007022340316325426,
+      "mejor_val_loss": 0.00695880688726902,
+      "mejor_epoca": 6,
+      "epocas_totales": 22
+    },
+    "notas": "ninguna"
+  },
+  {
+    "nombre": "2",
+    "fecha": "2025-10-03 23:22:21",
+    "configuracion": {
+      "LOOKBACK": 24,
+      "LSTM_units": "128-64-32",
+      "Dropout": 0.2,
+      "LEARNING_RATE": 0.0005,
+      "BATCH_SIZE": 32,
+      "EPOCHS": 50,
+      "PATIENCE_EARLY_STOP": 15
+    },
+    "metricas": {
+      "R2_3h": 0.7316962684920699,
+      "R2_6h": 0.747730735554718,
+      "R2_12h": 0.7431124003779226,
+      "R2_24h": 0.7370244322665016,
+      "R2_promedio": 0.7398909591728031,
+      "MAE_prom": 0.10347340456685285,
+      "RMSE_prom": 0.13912309459645755
+    },
+    "historia": {
+      "train_loss_final": 0.0063542528077960014,
+      "val_loss_final": 0.007116872351616621,
+      "mejor_val_loss": 0.006972747389227152,
+      "mejor_epoca": 36,
+      "epocas_totales": 50
+    },
+    "notas": "prueba con menos epocas no prospera da overfiting desde el inicio"
+  },
+  {
+    "nombre": "4 v",
+    "fecha": "2025-10-03 23:37:13",
+    "configuracion": {
+      "LOOKBACK": 48,
+      "LSTM_units": "128-64-32",
+      "Dropout": 0.2,
+      "LEARNING_RATE": 0.0009,
+      "BATCH_SIZE": 32,
+      "EPOCHS": 100,
+      "PATIENCE_EARLY_STOP": 15
+    },
+    "metricas": {
+      "R2_3h": 0.7613261688607069,
+      "R2_6h": 0.7542444214685634,
+      "R2_12h": 0.7450190644283855,
+      "R2_24h": 0.7513473524539028,
+      "R2_promedio": 0.7529842518028896,
+      "MAE_prom": 0.09942964042462213,
+      "RMSE_prom": 0.13239853292688264
+    },
+    "historia": {
+      "train_loss_final": 0.006310227792710066,
+      "val_loss_final": 0.005659379065036774,
+      "mejor_val_loss": 0.005621522665023804,
+      "mejor_epoca": 28,
+      "epocas_totales": 44
+    },
+    "notas": "varios cambios parece que mejora"
+  },
+  {
+    "nombre": "5",
+    "fecha": "2025-10-04 00:15:11",
+    "configuracion": {
+      "LOOKBACK": 48,
+      "LSTM_units": "128-64-32",
+      "Dropout": 0.2,
+      "LEARNING_RATE": 0.0009,
+      "BATCH_SIZE": 32,
+      "EPOCHS": 100,
+      "PATIENCE_EARLY_STOP": 15
+    },
+    "metricas": {
+      "R2_3h": 0.7807798101637551,
+      "R2_6h": 0.7775847844021992,
+      "R2_12h": 0.7664589022988194,
+      "R2_24h": 0.7681719076938095,
+      "R2_promedio": 0.7732488511396458,
+      "MAE_prom": 0.09479316744625918,
+      "RMSE_prom": 0.12506121372622425
+    },
+    "historia": {
+      "train_loss_final": 0.016791483387351036,
+      "val_loss_final": 0.01243012398481369,
+      "mejor_val_loss": 0.01235457044094801,
+      "mejor_epoca": 66,
+      "epocas_totales": 82
+    },
+    "notas": "pruebas"
+  }
+]

@@ -1,0 +1,21 @@
+# Dependencias mínimas para ejecutar la API
+# Instalar con: pip install -r requirements-minimal.txt
+
+# Framework web
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Validación de datos
+pydantic>=2.5.0
+
+# HTTP async
+aiohttp>=3.9.0
+
+# Machine Learning (usa la versión que ya tengas instalada)
+tensorflow>=2.16.1,<2.21.0
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Utilidades
+python-dotenv>=1.0.0

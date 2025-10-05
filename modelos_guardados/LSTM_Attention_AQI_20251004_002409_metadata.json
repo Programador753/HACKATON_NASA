@@ -1,0 +1,42 @@
+{
+  "nombre_experimento": "5",
+  "fecha_entrenamiento": "2025-10-04 00:24:09",
+  "metricas": {
+    "val_loss": 0.005621522665023804,
+    "r2_promedio": 0.7732488511396458,
+    "r2_3h": 0.7613261688607069,
+    "r2_24h": 0.7513473524539028,
+    "mae_promedio": 0.09479316744625918
+  },
+  "configuracion": {
+    "LOOKBACK": 48,
+    "BATCH_SIZE": 32,
+    "LEARNING_RATE": 0.0009,
+    "EPOCHS": 100,
+    "PATIENCE_EARLY_STOP": 15,
+    "epocas_entrenadas": 82
+  },
+  "features": [
+    "PM2.5",
+    "PM10",
+    "O3",
+    "NO2",
+    "temperatura",
+    "humedad",
+    "viento",
+    "AQI"
+  ],
+  "target": "AQI",
+  "horizones_prediccion": [
+    3,
+    6,
+    12,
+    24
+  ],
+  "ubicacion": {
+    "nombre": "Los Angeles, CA",
+    "latitud": 34.0522,
+    "longitud": -118.2437
+  },
+  "notas": "pruebas"
+}

@@ -1,0 +1,54 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                   🛰️ REPORTE DE CALIDAD DEL AIRE                            ║
+║                        Sistema TEMPO + LSTM                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📍 UBICACIÓN
+   • Ciudad: Los Angeles, CA
+   • Coordenadas: 34.0522°N, -118.2437°W
+   • Fecha/Hora: 2025-10-03 20:24:10
+
+🌡️ CONDICIONES ACTUALES
+   • AQI: 101.8 (🟠 Insalubre para grupos sensibles)
+   • PM2.5: 50.9 µg/m³
+   • PM10: 62.0 µg/m³
+   • O₃: 52.4 µg/m³
+   • NO₂: 50.5 µg/m³
+
+🔮 PREDICCIONES (próximas 24 horas)
+
+   ⏰ En 3 horas (23:24):
+      • AQI: 147.3 (+45.5)
+      • 🟠 Insalubre para grupos sensibles
+      • ⚠️ Reduce actividades intensas si eres sensible
+
+   ⏰ En 6 horas (02:24):
+      • AQI: 147.3 (+45.5)
+      • 🟠 Insalubre para grupos sensibles
+      • ⚠️ Reduce actividades intensas si eres sensible
+
+   ⏰ En 12 horas (08:24):
+      • AQI: 147.2 (+45.4)
+      • 🟠 Insalubre para grupos sensibles
+      • ⚠️ Reduce actividades intensas si eres sensible
+
+   ⏰ En 24 horas (20:24):
+      • AQI: 147.3 (+45.5)
+      • 🟠 Insalubre para grupos sensibles
+      • ⚠️ Reduce actividades intensas si eres sensible
+
+💡 RECOMENDACIONES
+   • Mejor hora para actividades: En 12 horas (AQI: 147.2)
+   • Evitar actividades: En 3 horas (AQI: 147.3)
+
+📊 DATOS TÉCNICOS
+   • Modelo: LSTM Bidireccional (3 capas)
+   • Datos: Últimas 24 horas
+   • Fuente: NASA TEMPO (datos reales de satélite)
+   • Dataset: TEMPO_NO2_L3
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Informe generado automáticamente por el sistema de predicción              ║
+║  Datos obtenidos del satélite geoestacionario TEMPO (NASA)                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝

@@ -36,7 +36,7 @@ La API ahora devuelve:
 ```
 
 ### 2. ✅ Integración OpenAQ
-- **API Key configurada:** `954996ec07db01d308984f4c9f28af288997db1297d5ae47d2df013f99ab002c`
+- **API Key configurada:** 
 - **Autenticación funcionando:** Confirmada con curl
 - **Búsqueda de estaciones:** Encuentra 5 estaciones cerca de LA
 - **Fallback inteligente:** Usa datos simulados cuando no hay datos recientes

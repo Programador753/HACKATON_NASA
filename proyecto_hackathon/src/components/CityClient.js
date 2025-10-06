@@ -11,6 +11,8 @@ export default function CityClient({ slug }) {
   const [stations, setStations] = useState([])
   const [metric, setMetric] = useState('pm25')
   const [currentAQI, setCurrentAQI] = useState(null)
+  const [currentValue, setCurrentValue] = useState(null)
+  const [currentMetric, setCurrentMetric] = useState('')
   const [currentPollutants, setCurrentPollutants] = useState(null)
   const [dataSource, setDataSource] = useState('')
   const [warnings, setWarnings] = useState(null)
@@ -68,6 +70,8 @@ export default function CityClient({ slug }) {
         setData([])
         setPred(preds)
         setCurrentAQI(pp.currentAQI)
+        setCurrentValue(pp.currentValue)
+        setCurrentMetric(pp.currentMetric)
         setCurrentPollutants(pp.currentPollutants)
         setDataSource(pp.dataSource || 'Desconocido')
         setWarnings(pp.warnings)
@@ -161,6 +165,11 @@ export default function CityClient({ slug }) {
                 </div>
                 <div>
                   <div className="font-semibold">{getAQILabel(currentAQI)}</div>
+                  {metric !== 'aqi' && currentValue !== null && currentMetric && (
+                    <div className="text-sm font-medium text-blue-600 mt-1">
+                      📈 {currentMetric}: {currentValue.toFixed(1)} {currentMetric.includes('PM') ? 'µg/m³' : 'ppb'}
+                    </div>
+                  )}
                   <div className="text-sm text-gray-600">
                     🌐 Ciudad: <strong>{slug}</strong>
                   </div>

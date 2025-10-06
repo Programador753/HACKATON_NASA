@@ -25,6 +25,63 @@ const METRIC_MAPPING = {
   'aqi': 'AQI'
 }
 
+// Función para calcular AQI basado en concentración de contaminante
+function calculateAQI(pollutant, concentration) {
+  // Rangos AQI estándar EPA
+  const breakpoints = {
+    'PM2.5': [
+      { cLow: 0.0, cHigh: 12.0, iLow: 0, iHigh: 50 },
+      { cLow: 12.1, cHigh: 35.4, iLow: 51, iHigh: 100 },
+      { cLow: 35.5, cHigh: 55.4, iLow: 101, iHigh: 150 },
+      { cLow: 55.5, cHigh: 150.4, iLow: 151, iHigh: 200 },
+      { cLow: 150.5, cHigh: 250.4, iLow: 201, iHigh: 300 },
+      { cLow: 250.5, cHigh: 500.4, iLow: 301, iHigh: 500 }
+    ],
+    'PM10': [
+      { cLow: 0, cHigh: 54, iLow: 0, iHigh: 50 },
+      { cLow: 55, cHigh: 154, iLow: 51, iHigh: 100 },
+      { cLow: 155, cHigh: 254, iLow: 101, iHigh: 150 },
+      { cLow: 255, cHigh: 354, iLow: 151, iHigh: 200 },
+      { cLow: 355, cHigh: 424, iLow: 201, iHigh: 300 },
+      { cLow: 425, cHigh: 604, iLow: 301, iHigh: 500 }
+    ],
+    'O3': [
+      { cLow: 0, cHigh: 54, iLow: 0, iHigh: 50 },
+      { cLow: 55, cHigh: 70, iLow: 51, iHigh: 100 },
+      { cLow: 71, cHigh: 85, iLow: 101, iHigh: 150 },
+      { cLow: 86, cHigh: 105, iLow: 151, iHigh: 200 },
+      { cLow: 106, cHigh: 200, iLow: 201, iHigh: 300 }
+    ],
+    'NO2': [
+      { cLow: 0, cHigh: 53, iLow: 0, iHigh: 50 },
+      { cLow: 54, cHigh: 100, iLow: 51, iHigh: 100 },
+      { cLow: 101, cHigh: 360, iLow: 101, iHigh: 150 },
+      { cLow: 361, cHigh: 649, iLow: 151, iHigh: 200 },
+      { cLow: 650, cHigh: 1249, iLow: 201, iHigh: 300 },
+      { cLow: 1250, cHigh: 2049, iLow: 301, iHigh: 500 }
+    ]
+  }
+
+  const ranges = breakpoints[pollutant]
+  if (!ranges) return null
+
+  // Encontrar el rango apropiado
+  for (const range of ranges) {
+    if (concentration >= range.cLow && concentration <= range.cHigh) {
+      // Fórmula AQI: I = [(IHigh - ILow) / (CHigh - CLow)] * (C - CLow) + ILow
+      const aqi = ((range.iHigh - range.iLow) / (range.cHigh - range.cLow)) * 
+                  (concentration - range.cLow) + range.iLow
+      return Math.round(aqi)
+    }
+  }
+
+  // Si está fuera de rango, usar el límite superior
+  if (concentration > ranges[ranges.length - 1].cHigh) {
+    return 500
+  }
+  return 0
+}
+
 async function fetchPredictionsFromPythonAPI(citySlug, metric) {
   const apiUrl = process.env.NEXT_PUBLIC_AQI_API_URL || 'http://localhost:8000'
   const cityEndpoint = CITY_ENDPOINTS[citySlug] || 'los-angeles'
@@ -85,9 +142,26 @@ async function fetchPredictionsFromPythonAPI(citySlug, metric) {
       }
     })
 
+    // Calcular AQI específico según la métrica seleccionada
+    let currentAQI
+    let currentValue
+    
+    if (metric === 'aqi') {
+      // Si se selecciona AQI, usar el valor general
+      currentAQI = data.aqi_actual_estimado
+      currentValue = currentAQI
+    } else {
+      // Para métricas específicas, calcular AQI del contaminante
+      const pollutantConcentration = data.contaminantes_actuales?.[metricKey] || 0
+      currentValue = pollutantConcentration
+      currentAQI = calculateAQI(metricKey, pollutantConcentration) || data.aqi_actual_estimado
+    }
+
     return {
       predictions,
-      currentAQI: data.aqi_actual_estimado,
+      currentAQI,
+      currentValue,
+      currentMetric: metricKey,
       currentPollutants: data.contaminantes_actuales,
       location: data.nombre_ubicacion,
       dataSource: data.fuente_datos,
@@ -137,6 +211,8 @@ function generateFallbackPredictions(metric) {
   return {
     predictions: out,
     currentAQI: 80,
+    currentValue: metric === 'aqi' ? 80 : 15.5,
+    currentMetric: METRIC_MAPPING[metric] || 'PM2.5',
     dataSource: 'Simulado (fallback)'
   }
 }
